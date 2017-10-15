@@ -131,6 +131,7 @@ footer a{text-decoration: none !important;}
 .doc-div-1{
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-end;
 }
 .doc-div {
 	margin: 0 10px;
@@ -143,6 +144,7 @@ footer a{text-decoration: none !important;}
 }
 .doc-div-1 a{
 	display: inline-block;
+	padding: 0 5px 0 0;
 }
 .doc-container{
 	display: flex;
