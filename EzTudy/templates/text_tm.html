@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EzTudy</title>
+	<link rel="stylesheet" href="{% static "css/text_tm.css" %}">
+</head>
+<body>
+	<div class="main-container">
+		<header id="header" class="">
+			<a class="back" href="{% url "documents:index" %}">
+				<img class="back-img" src="{% static "images/arrow_back.png" %}"></img>
+			</a>
+			<div class="bar"></div>
+		</header>
+		<a href="{% url 'documents:index' %}" title="" class="logo-a">
+			<img src="{% static "images/logo_large.png" %}" alt="" class="logo">
+		</a>
+		<div class="title-div"> 
+			<span class="main-title">
+				{% block title %}
+					
+				{% endblock title %}
+			</span>
+		</div>
+		<div class="container">	
+			<p class="paragraph">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus est nec ex sollicitudin feugiat. Pellentesque euismod tempor laoreet. Aliquam vehicula justo dui, non efficitur lorem porta sit amet. Phasellus felis metus, lacinia ut scelerisque et, aliquet sed arcu. Mauris dignissim lobortis lorem vehicula varius. Vestibulum accumsan, dolor et dictum auctor, ipsum dolor tempus lacus, eget euismod mauris est at lorem. Vestibulum non auctor massa. Phasellus mollis, lorem id iaculis suscipit, nunc quam auctor dui, non laoreet nisl arcu sit amet nunc. Sed tempus, nulla eget rutrum iaculis, metus turpis vulputate risus, sed luctus erat velit vel est. Nulla vestibulum, massa sit amet auctor ullamcorper, turpis orci tristique turpis, sed dignissim eros augue cursus lacus. Ut nec ligula in sapien laoreet volutpat. Vivamus ac tincidunt nunc.
+			</p>
+			<p class="paragraph">
+				Nullam eget interdum ipsum, vel accumsan lorem. Nunc in eros nibh. Ut blandit neque in congue hendrerit. Nulla non lacus ante. Etiam nec tortor elementum, dapibus magna quis, egestas nunc. Nulla et orci placerat, sodales mi vel, ultricies mi. Quisque ut varius sapien. Nullam tristique, purus sed eleifend aliquet, elit est venenatis lacus, eu consectetur massa orci sed quam. Integer est est, faucibus id scelerisque et, commodo imperdiet quam. Morbi ullamcorper ornare ante, venenatis bibendum odio dignissim eu. Phasellus ex odio, rutrum eu elit ac, sollicitudin ultrices tellus. Nam lacus urna, scelerisque vitae massa pharetra, laoreet sodales velit. Nam rutrum condimentum sapien, at imperdiet velit maximus in.
+			</p>
+			<p class="paragraph">
+				Maecenas imperdiet elit non imperdiet ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vulputate vestibulum eleifend. Curabitur et tristique ipsum. Nullam euismod posuere mauris sit amet laoreet. Praesent molestie dui nec dui vulputate egestas. Mauris laoreet efficitur dui, vitae finibus lectus pretium quis. In purus neque, convallis et ligula ac, ultricies tristique augue. Mauris id feugiat tellus. Pellentesque et mauris non nunc egestas tincidunt vitae eu nisi. Donec ac ex vel ex blandit rutrum.
+			</p>	
+			<p class="paragraph">
+				Maecenas imperdiet elit non imperdiet ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vulputate vestibulum eleifend. Curabitur et tristique ipsum. Nullam euismod posuere mauris sit amet laoreet. Praesent molestie dui nec dui vulputate egestas. Mauris laoreet efficitur dui, vitae finibus lectus pretium quis. In purus neque, convallis et ligula ac, ultricies tristique augue. Mauris id feugiat tellus. Pellentesque et mauris non nunc egestas tincidunt vitae eu nisi. Donec ac ex vel ex blandit rutrum.
+			</p>
+		</div>
+	</div>
+</body
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EzTudy</title>
+	<link rel="stylesheet" href="{% static "css/main.css" %}">
+</head>
+<body>
+	<header id="header" class="center-all">
+		<a href="index.html" title="">
+			<img src="images/logo_large.png" alt="">
+		</a>
+	</header>
+	
+	<div class="main-div">
+		<p id="check-files-t">Check uploaded files <a href="#documents" title="">here</a>!</p>
+		<div class="select-div">
+			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
+				<option value="lmao1">Lmao</option>
+				<option value="lmao2">Lmao2</option>
+				<option value="" disabled selected>Semester</option>
+			</select>	
+			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
+				<option value="lmao1">Lmao</option>
+				<option value="lmao2">Lmao2</option>
+				<option  value="" disabled selected>Course</option>
+			</select>
+			<select id="list" name="list" form="select-f" class="styled-select semi-square">
+				<option value="lmao1">Lmao</option>
+				<option value="lmao2">Lmao2</option>
+				<option value="" disabled selected>Topic</option>
+			</select>
+		</div>
+		<form method="get" accept-charset="utf-8" id="select-f"></form>
+		<button class="btn-main" type="button" form="select-f" onclick="btnMain()" id="btn_main">SELECT</button>
+	</div>
+
+	<div class="center-all rec">
+		<p>Enter your question</p>
+		<form method="get" accept-charset="utf-8" class="center-all">
+			<input type="text" name="" value="" placeholder="" class="input-q">
+			<button class="btn-mid" type="button" id="btn_mid" onclick="btnMid()">Go</button>
+		</form>
+	</div>
+	<div class="center-all div-res" id="div_res">
+		<div class="res-one">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque fringilla lectus vel volutpat. Praesent vel tincidunt lacus. Praesent egestas at turpis id pellentesque. Praesent quis risus blandit, tristique tellus a, egestas odio. Quisque eget interdum leo, et dictum dui. Vestibulum volutpat ornare congue. Curabitur suscipit nunc vitae velit iaculis egestas. Nunc imperdiet lectus metus, in fringilla neque vestibulum eu. Sed laoreet at ipsum et pharetra. Nullam eu tempor dui. Suspendisse orci lectus, euismod in justo sed, bibendum viverra tortor. Curabitur faucibus facilisis ipsum non suscipit. Maecenas laoreet aliquet mi a luctus. Nam vel nisi at mi sollicitudin consequat. Nullam vitae feugiat justo. Suspendisse purus augue, vestibulum sit amet malesuada ac, ultricies bibendum nisi.</p>
+		</div>
+	</div>
+
+
+	<figure class="center-all">
+		<img src="images/leader_adsense.png">
+	</figure>
+
+	<section id="documents">
+		<div id="document">
+			<div class="docs-rectangle"></div>
+			<div class="doc">
+				<p id="doc-title">Documents</p>
+				<div class="doc-container">
+					<div class="doc-div">
+						<div class="doc-div-1">
+							<p>Ev-1_HyV.doc</p>
+							<a href="" title=""><img src="images/report.png" alt=""></a>
+							<a href=""><img src="images/share_g.png" alt=""></a>
+						</div>
+							<div class="doc-rectangle"></div>
+					</div>
+					<div class="doc-div">
+						<div class="doc-div-1">
+							<p>E-10_CW.doc</p>
+							<a href="" title=""><img src="images/report.png" alt=""></a>
+							<a href=""><img src="images/share_g.png" alt=""></a>
+						</div>
+							<div class="doc-rectangle"></div>
+					</div>
+					<div class="doc-div">
+						<div class="doc-div-1">
+							<p>A-5_ME.doc</p>
+							<a href="" title=""><img src="images/report.png" alt=""></a>
+							<a href=""><img src="images/share_g.png" alt=""></a>
+						</div>
+							<div class="doc-rectangle"></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="docs-rectangle"></div>
+		</div>
+		<button id="upload-button" type="">
+			UPLOAD
+		</button>
+	</section>
+	
+
+	<footer>
+		<div class="center-all d-1">
+			<a href="" title="">
+				Click here to support the work!
+			</a>
+		</div>
+		<div class="center-all d-2">
+			<a href="text_tm.html" title="">Terms and conditions</a>
+			<a href="text_tm.html" title="">User agreement</a>
+			<a href="text_tm.html" title="">Privacy Policy</a>
+	</footer>
+	<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

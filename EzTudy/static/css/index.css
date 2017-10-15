@@ -1,0 +1,93 @@
+body{
+	margin: 0;
+	font-family: Roboto
+}
+#main-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.logo{
+	width: 450px;
+	font-weight: 400;
+	margin: 20px 0 5px 0;
+}
+#slogan{
+	font-size: 20pt;
+}
+#choose{
+	font-size: 15pt;
+	margin: 10px 0;
+}
+.rec{
+	background: #3f51b5;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px 0;
+	margin: 20px 0 10px 0;
+}
+.rec p{
+	color: white;
+	font-size: 25px;
+	margin: 5px;
+}	
+.final{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.final #final-p{
+	font-size: 20px;
+}
+.final p{
+	font-size: 12px;
+	margin: 0;
+}
+.btn-main{
+	padding: 10px 70px;
+	background: #3f51b5;
+	color: white;
+	border-radius: 12px;
+	font-size: 45px;
+	font-weight: 700;
+	margin: 20px 0;
+}
+.btn-mid{
+	padding: 8px 50px;
+	background: white;
+	color: #3f51b5;
+	border-radius: 12px;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.styled-select {
+   height: 40px;
+   overflow: hidden;
+   width: 350px;
+}
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+
+
+.ad-r {
+	position: absolute;
+	float: right;
+	margin: 30px 0;
+	right: 100px; 
+}
+.ad-l {
+	position: absolute;
+	float: left;
+	margin: 30px 0;
+	left: 100px;
+}

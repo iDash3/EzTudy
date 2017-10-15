@@ -1,0 +1,7 @@
+{{ school }}
+{{ school.name }}
+{{ school.id }}
+
+{% for doc in school.document_set.all  %}
+	{{ doc.name }}
+{% endfor %}
