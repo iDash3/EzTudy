@@ -9,8 +9,8 @@
 </head>
 <body>
 	<header id="header" class="center-all">
-		<a href="index.html" title="">
-			<img src="images/logo_large.png" alt="">
+		<a href="{% url 'documents:index' %}" title="">
+			<img src="{% static "images/logo_large.png" %}" alt="">
 		</a>
 	</header>
 	
@@ -20,17 +20,17 @@
 			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
 				<option value="lmao1">Lmao</option>
 				<option value="lmao2">Lmao2</option>
-				<option value="" disabled selected>Semester</option>
+				<option value="" disabled selected hidden>Semester</option>
 			</select>	
 			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
 				<option value="lmao1">Lmao</option>
 				<option value="lmao2">Lmao2</option>
-				<option  value="" disabled selected>Course</option>
+				<option  value="" disabled selected hidden>Course</option>
 			</select>
 			<select id="list" name="list" form="select-f" class="styled-select semi-square">
 				<option value="lmao1">Lmao</option>
 				<option value="lmao2">Lmao2</option>
-				<option value="" disabled selected>Topic</option>
+				<option value="" disabled selected hidden>Topic</option>
 			</select>
 		</div>
 		<form method="get" accept-charset="utf-8" id="select-f"></form>
@@ -50,49 +50,33 @@
 		</div>
 	</div>
 
-
-	<figure class="center-all">
-		<img src="images/leader_adsense.png">
-	</figure>
-
 	<section id="documents">
 		<div id="document">
 			<div class="docs-rectangle"></div>
 			<div class="doc">
 				<p id="doc-title">Documents</p>
 				<div class="doc-container">
-					<div class="doc-div">
-						<div class="doc-div-1">
-							<p>Ev-1_HyV.doc</p>
-							<a href="" title=""><img src="images/report.png" alt=""></a>
-							<a href=""><img src="images/share_g.png" alt=""></a>
-						</div>
+
+					{% for doc in school.document_set.all  %}
+						<div class="doc-div">
+							<div class="doc-div-1">
+								<a href="{{ doc.file.url }}" download>{{ doc.name }}</a>
+								<a href=""><img src="{% static "images/report.png" %}"></a>
+								<a href=""><img src="{% static "images/share_g.png" %}"></a>
+							</div>
 							<div class="doc-rectangle"></div>
-					</div>
-					<div class="doc-div">
-						<div class="doc-div-1">
-							<p>E-10_CW.doc</p>
-							<a href="" title=""><img src="images/report.png" alt=""></a>
-							<a href=""><img src="images/share_g.png" alt=""></a>
 						</div>
-							<div class="doc-rectangle"></div>
-					</div>
-					<div class="doc-div">
-						<div class="doc-div-1">
-							<p>A-5_ME.doc</p>
-							<a href="" title=""><img src="images/report.png" alt=""></a>
-							<a href=""><img src="images/share_g.png" alt=""></a>
-						</div>
-							<div class="doc-rectangle"></div>
-					</div>
+					{% endfor %}
 
 				</div>
 			</div>
 			<div class="docs-rectangle"></div>
 		</div>
-		<button id="upload-button" type="">
-			UPLOAD
-		</button>
+		<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button id="upload-button" type="submit">UPLOAD</button>
+		</form>
 	</section>
 	
 
@@ -107,6 +91,6 @@
 			<a href="text_tm.html" title="">User agreement</a>
 			<a href="text_tm.html" title="">Privacy Policy</a>
 	</footer>
-	<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="{% static "js/main.js" %}" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

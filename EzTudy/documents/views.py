@@ -2,20 +2,21 @@
 from __future__ import unicode_literals
 
 from django.template import loader
-from django.http import HttpResponse
+from django.views import generic
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Document, School
-# Create your views here.
+
+from .forms import DocumentForm
 
 def index(request):
 	args = {}
 	if request.method == 'POST':
 		sc_id = request.POST.get('sc_id')
-		# args['sc_id'] = sc_id
-		return redirect('/school/{}'.format(sc_id))
-		# return redirect(reverse('/school/',args=(sc_id,)))
+		# return redirect('/school/{}'.format(sc_id))
+		return HttpResponseRedirect(reverse('documents:mainsc',args=(sc_id,)))
 
 	schools = School.objects.order_by('id')
 	context = {
@@ -23,9 +24,29 @@ def index(request):
 	}
 	return render(request, 'index.html', context)
 
+def success(request):
+	return render(request, 'file_success.html', {})
+
 def mainsc(request, sc_id):
+	if request.method == 'POST':
+		form = DocumentForm(request.POST, request.FILES)
+		if form.is_valid():
+			d = form.save()
+			d.save()
+			return HttpResponseRedirect('/success')
+	else:
+		form = DocumentForm()
+
 	school = get_object_or_404(School, pk=sc_id)
-	return render(request, 'main.html', {'school': school})
+	context = {
+		'school': school,
+		'form': form,
+	}
+	return render(request, 'main.html', context)
+
+# class DetailView(generic.DetailView):
+# 	model = School
+# 	template_name = 'main.html'
 
 def worldsc(request):
 	worldsc = School.objects.order_by('id',)
