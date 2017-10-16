@@ -28,6 +28,8 @@ def success(request):
 	return render(request, 'file_success.html', {})
 
 def mainsc(request, sc_id):
+	if request.GET.get('action') == 'ask':
+		print('Ask')
 	if request.method == 'POST':
 		form = DocumentForm(request.POST, request.FILES)
 		if form.is_valid():
@@ -55,3 +57,8 @@ def worldsc(request):
 def text_tm(request):
 	context = {}
 	return render(request, 'tc_ez.html', context)
+
+def text_tc(request):
+	return render(request, 'tc_ez.html', {})
+def text_ua(request):
+	return render(request, 'tc_ez.html', {})

@@ -11,6 +11,7 @@ header img{
 	flex-direction: column;
 	margin: 20px;
 }
+.select-div{margin: 5px;}
 .select-div select option{
 	font-size: 20px;
 }
@@ -150,8 +151,8 @@ footer a{text-decoration: none !important;}
 	display: flex;
 }
 #check-files-t{
-	font-size: 18pt;
-	margin: 0 0 20px 0;
+	font-size: 15pt;
+	margin: 5px;
 	font-style: italic;
 }
 #check-files-t a{
@@ -169,8 +170,39 @@ footer a{text-decoration: none !important;}
 	margin: 20px;
 }
 #documents{
-	margin: 50px;
+	margin: 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+#sc-title{
+	margin: 10px;
+	font-size: 18pt;
+}
+.up-form p{
+	display: flex;
+	font-size: 12pt;
+	justify-content: center;
+}
+.up-form p label{
+	padding: 5px;
+}
+.up-form p select{
+	width: 170px;
+}
+.up-form{
+	border: 3px solid #415ebe;
+	border-radius: 5px;
+	padding: 30px;
+	margin: 10px;
+}
+.center-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media screen and (max-width: 800px){
+	.center-form{
+		display: block; !important
+	}
 }

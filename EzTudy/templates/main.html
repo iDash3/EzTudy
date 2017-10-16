@@ -16,31 +16,24 @@
 	
 	<div class="main-div">
 		<p id="check-files-t">Check uploaded files <a href="#documents" title="">here</a>!</p>
+		<p id="sc-title"> You're in <b>{{ school.name }}</b></p>
 		<div class="select-div">
-			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
+			<select id="list" name="semester" form="select-f" class="styled-select semi-square align-r">
 				<option value="lmao1">Lmao</option>
-				<option value="lmao2">Lmao2</option>
 				<option value="" disabled selected hidden>Semester</option>
 			</select>	
-			<select id="list" name="list" form="select-f" class="styled-select semi-square align-r">
+			<select id="list" name="course" form="select-f" class="styled-select semi-square align-r">
 				<option value="lmao1">Lmao</option>
-				<option value="lmao2">Lmao2</option>
 				<option  value="" disabled selected hidden>Course</option>
 			</select>
-			<select id="list" name="list" form="select-f" class="styled-select semi-square">
-				<option value="lmao1">Lmao</option>
-				<option value="lmao2">Lmao2</option>
-				<option value="" disabled selected hidden>Topic</option>
-			</select>
 		</div>
-		<form method="get" accept-charset="utf-8" id="select-f"></form>
-		<button class="btn-main" type="button" form="select-f" onclick="btnMain()" id="btn_main">SELECT</button>
 	</div>
 
 	<div class="center-all rec">
 		<p>Enter your question</p>
-		<form method="get" accept-charset="utf-8" class="center-all">
-			<input type="text" name="" value="" placeholder="" class="input-q">
+		<form method="get" accept-charset="utf-8" class="center-all" id="select-f">
+			<input type="hidden" name="action" value="ask">
+			<input type="text" name="question" value="" placeholder="" class="input-q">
 			<button class="btn-mid" type="button" id="btn_mid" onclick="btnMid()">Go</button>
 		</form>
 	</div>
@@ -72,11 +65,13 @@
 			</div>
 			<div class="docs-rectangle"></div>
 		</div>
-		<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button id="upload-button" type="submit">UPLOAD</button>
-		</form>
+		<div class="up-form">
+			<form class="center-form" action="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button id="upload-button" type="submit">UPLOAD</button>
+			</form>
+		</div>
 	</section>
 	
 
@@ -87,9 +82,9 @@
 			</a>
 		</div>
 		<div class="center-all d-2">
-			<a href="text_tm.html" title="">Terms and conditions</a>
-			<a href="text_tm.html" title="">User agreement</a>
-			<a href="text_tm.html" title="">Privacy Policy</a>
+			<a href="{% url 'documents:text_tm' %}" title="">Terms and conditions</a>
+			<a href="{% url 'documents:text_tm' %}" title="">User agreement</a>
+			<a href="{% url 'documents:text_tm' %}" title="">Privacy Policy</a>
 	</footer>
 	<script src="{% static "js/main.js" %}" type="text/javascript" charset="utf-8" async defer></script>
 </body>
